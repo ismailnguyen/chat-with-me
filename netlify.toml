@@ -1,4 +1,7 @@
 [functions]
+  node_bundler = "esbuild"
+  
+[functions]
   directory = "api"
 
 [[redirects]]
