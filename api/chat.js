@@ -1,11 +1,11 @@
-import { fetch } from 'node-fetch'
+import fetch from 'node-fetch'
 
 const API_ENDPOINT = 'https://api.openai.com/v1/completions';
 const AI_MODEL = 'text-davinci-003';
 const AI_MAX_TOKENS = 1000;
 const AI_TEMPERATURE = 0;
 
-export async function handler(event, context) {
+export const handler = async (event, context) => {
     if (!event.body) {
         return {
             statusCode: 400,
