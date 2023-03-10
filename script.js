@@ -74,7 +74,11 @@ author.addEventListener('keypress', e => {
         fetch('./api/chat', requestOptions)
             .then(response => response.text())
             .then(response => {
-                addBotMessage(response);
+              if (response.includes('error') && response.includes('timed out')) {
+                response = "I'm a little bit busy, can you retry please.";
+              }
+
+              addBotMessage(response);
             })
             .catch(error => console.log('error', error));
 
